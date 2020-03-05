@@ -13,9 +13,9 @@ def run_loop(env, n_steps, visualise=False):
   possible_actions = env.action_specs()
 
   observations = env.reset()
-  for t in xrange(n_steps):
+  for t in range(n_steps):
     # Random action
-    action = np.random.choice(possible_actions.values())
+    action = np.random.choice(list(possible_actions.values()))
 
     # Step (this will plot if visualise is True)
     reward, done, observations = env.step(action)
